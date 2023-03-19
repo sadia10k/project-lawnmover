@@ -1,6 +1,7 @@
 # Documents to exclude
 *.docx
 *.txt
+*.jpg
 
 # Executables
 *.out
