@@ -112,8 +112,16 @@ public:
   // Return true when this disk_state is fully sorted, with all light disks on
   // the left (low indices) and all dark disks on the right (high indices).
   bool is_sorted() const {
-      
-      return true;
+    // get half size
+    size_t m = total_count()/2;
+
+    // if there's any dark disks in left half, then disk is not sorted. 
+    for (size_t i = 0; i < m; i++) {
+      if (get(i) == DISK_DARK) return false;
+    }
+
+    // since there's no dark disks in left half, assume it's sorted
+    return true;
   }
 };
 
