@@ -148,10 +148,10 @@ sorted_disks sort_alternate(const disk_state& before) {
   disk_state state = before;
   size_t n = state.total_count();
 
-  for(size_t i = 0; i < n/2; i++){
+  for(size_t i = 0; i < n; i++){
     
     // Loop through and sort
-    for(size_t j = i%2; j < n/2 - 1; j += 2){
+    for(size_t j = i%2; j < n - 1; j += 2){
       if (state.get(j) == DISK_DARK && state.get(j+1) == DISK_LIGHT) {
         state.swap(j);
         numOfSwap++;
